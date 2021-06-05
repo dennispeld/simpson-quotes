@@ -43,7 +43,7 @@ Url: `http://localhost:8080/api/user/3`
 
 ### Add a new quote for the user with the id 1
 Method: POST
-Url: `http://localhost:8080/api/user/?user_id=1&quotation=Hello world!`
+Url: `http://localhost:8080/api/user`
 Body (raw) - JSON: 
 ```
 {
@@ -54,7 +54,7 @@ Body (raw) - JSON:
 
 ### Update the details of the user with the id 5
 Method: PUT
-Url: ``
+Url: `http://localhost:8080/api/user`
 Body (raw) - JSON:
 ```
 {
@@ -64,3 +64,20 @@ Body (raw) - JSON:
     "address": "Supermarket 1 Springfield"
 }
 ```
+
+# Testing
+
+To run the test, enter the php container once again,
+
+`docker exec -it simpson-quotes-php sh`
+
+and now just run the command
+
+`composer test`
+
+
+## Credits
+**Author**: Dennis Peld  
+**Date**: 05.06.2021
+**Tools**: Visual Studio Code, Docker.
+**Programming language**: PHP using Laravel framework.
