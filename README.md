@@ -78,6 +78,6 @@ and now just run the command
 
 ## Credits
 **Author**: Dennis Peld  
-**Date**: 05.06.2021
-**Tools**: Visual Studio Code, Docker.
+**Date**: 05.06.2021  
+**Tools**: Visual Studio Code, Docker.  
 **Programming language**: PHP using Laravel framework.
