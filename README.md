@@ -31,7 +31,36 @@ When its over, `exit` the contaner.
 
 Now you can use your browser to make API calls. The application is running in nginx container with port 8080.
 
-In your browser, navigate to 
+I would suggest to use Postman to test the API.
 
-`http://localhost:8080/api/users` to see all users
-`http://localhost:8080/api/user/3` to see all quotes of a user with the id 3
+### See all users
+Method: GET
+Url: `http://localhost:8080/api/users`
+
+### See all quotes of the user with the id 3
+Method: GET
+Url: `http://localhost:8080/api/user/3`
+
+### Add a new quote for the user with the id 1
+Method: POST
+Url: `http://localhost:8080/api/user/?user_id=1&quotation=Hello world!`
+Body (raw) - JSON: 
+```
+{
+    "user_id": 1,
+    "quotation": "Oopsie"
+}
+```
+
+### Update the details of the user with the id 5
+Method: PUT
+Url: ``
+Body (raw) - JSON:
+```
+{
+    "username": "abu.junior",
+    "firstname": "Abu",
+    "surname": "Junior",
+    "address": "Supermarket 1 Springfield"
+}
+```
