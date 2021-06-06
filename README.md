@@ -29,9 +29,7 @@ Now, you can run the migrations and seeds:
 
 When its over, `exit` the contaner.
 
-Now you can use your browser to make API calls. The application is running in nginx container with port 8080.
-
-I would suggest to use Postman to test the API.
+I would suggest to use Postman to test the API. The application is running in nginx container with port 8080.
 
 ### See all users
 Method: GET  
@@ -39,11 +37,11 @@ Url: `http://localhost:8080/api/users`
 
 ### See all quotes of the user with the id 3
 Method: GET  
-Url: `http://localhost:8080/api/user/3`
+Url: `http://localhost:8080/api/user/3/quotes`
 
 ### Add a new quote for the user with the id 1
 Method: POST  
-Url: `http://localhost:8080/api/user`  
+Url: `http://localhost:8080/api/user/quote`  
 Body (raw) - JSON: 
 ```
 {
@@ -54,7 +52,7 @@ Body (raw) - JSON:
 
 ### Update the details of the user with the id 5
 Method: PUT  
-Url: `http://localhost:8080/api/user`  
+Url: `http://localhost:8080/api/user/5`  
 Body (raw) - JSON:
 ```
 {

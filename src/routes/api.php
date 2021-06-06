@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QuotationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,11 +23,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // show all users
 Route::get('/users', [UserController::class, 'index']); 
 
-// show a user by if
-Route::get('/user/{id}', [UserController::class, 'show']);
+// update a user
+Route::put('/user/{id}', [UserController::class, 'update']);
 
 // add a new quote to a user
-Route::post('/user', [UserController::class, 'store']);
+Route::post('/user/quote', [QuotationController::class, 'store']);
 
-// update a user (name or address)
-Route::put('/user/{id}', [UserController::class, 'update']);
+// show quotes of a user
+Route::get('/user/{id}/quotes', [QuotationController::class, 'show']);
