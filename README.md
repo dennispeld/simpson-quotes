@@ -14,11 +14,11 @@ When its done, you should see 3 containers up and running:
 
 `docker ps`
 
-simpson-quotes-php
-simpson-quotes-nginx
-simpson-quotes-mysql
+simpson-quotes-php  
+simpson-quotes-nginx  
+simpson-quotes-mysql  
 
-Now, you need to run migrations and seeders to populate the database. 
+Now, you need to run migrations and seeders to populate the database.  
 For that, run this command, which will enter the php container:
 
 `docker exec -it simpson-quotes-php sh`
@@ -34,16 +34,16 @@ Now you can use your browser to make API calls. The application is running in ng
 I would suggest to use Postman to test the API.
 
 ### See all users
-Method: GET
+Method: GET  
 Url: `http://localhost:8080/api/users`
 
 ### See all quotes of the user with the id 3
-Method: GET
+Method: GET  
 Url: `http://localhost:8080/api/user/3`
 
 ### Add a new quote for the user with the id 1
-Method: POST
-Url: `http://localhost:8080/api/user`
+Method: POST  
+Url: `http://localhost:8080/api/user`  
 Body (raw) - JSON: 
 ```
 {
@@ -53,8 +53,8 @@ Body (raw) - JSON:
 ```
 
 ### Update the details of the user with the id 5
-Method: PUT
-Url: `http://localhost:8080/api/user`
+Method: PUT  
+Url: `http://localhost:8080/api/user`  
 Body (raw) - JSON:
 ```
 {
@@ -74,6 +74,20 @@ To run the test, enter the php container once again,
 and now just run the command
 
 `composer test`
+
+### PHPMD
+Additionally, I have used PHPMD script to detect code mistakes.
+
+Go to `src` folder in the terminal and run this command
+
+`vendor/bin/phpmd app html ruleset.xml cleancode,codesize,controversial,design,naming,unusedcode > phpmd.html`
+
+This will generate `phpmd.html` file with the report.
+
+### PHPCS
+Additionally, I have used PHPCS to validate my code against PSR12 coding standards.
+
+`phpcs --standard=PSR12 .\app\`
 
 
 ## Credits

@@ -12,7 +12,6 @@ class UserController extends Controller
 {
     /**
      * Display all users.
-     * 
      * @return JsonResponse
      */
     public function index(): JsonResponse
@@ -24,7 +23,6 @@ class UserController extends Controller
 
      /**
      * Show the quotes of a user.
-     *
      * @param  int  $id
      * @return JsonResponse
      */
@@ -35,7 +33,6 @@ class UserController extends Controller
             ->where('users.id', '=', $id)
             ->get();
 
-   
         if ($quotes) {
             return response()->json([
                 'quotes' => $quotes
@@ -49,7 +46,6 @@ class UserController extends Controller
 
     /**
      * Store a new quotation.
-     *
      * @param  Request $request
      * @return JsonResponse
      */
@@ -58,7 +54,6 @@ class UserController extends Controller
         $quote = new Quotation();
         $quote->user_id = $request->user_id;
         $quote->quotation = $request->quotation;
-        
         $quote->save();
 
         return response()->json($quote);
@@ -66,7 +61,6 @@ class UserController extends Controller
 
     /**
      * Update the user.
-     *
      * @param  Request $request
      * @param  int  $id
      * @return JsonResponse
