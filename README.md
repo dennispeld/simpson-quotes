@@ -4,9 +4,11 @@ A program *simpson-quotes* is an API, that retrieves quotes of famous Simpsons c
 
 # Setup
 
-Clone the repository and navigate to the root folder.
+Clone the repository, navigate to the src/ folder and run
 
-Build images and run docker containers using the command
+`composer install`
+
+Now, navigate to root folder, build images and run docker containers using the command
 
 `docker-compose up -d`
 
@@ -27,7 +29,11 @@ Now, you can run the migrations and seeds:
 
 `php artisan migrate:fresh --seed`
 
-When its over, `exit` the contaner.
+While you are still in the container, set the rights for logging folders
+
+`chmod -R 777 /var/www/storage/logs/ /var/www/storage/framework/cache/data/`
+
+When it's done, `exit` the container.
 
 I would suggest to use Postman to test the API. The application is running in nginx container with port 8080.
 
@@ -73,7 +79,7 @@ and now just run the command
 
 `composer test`
 
-### PHPMD
+### PHPMD (Mess Detector)
 Additionally, I have used PHPMD script to detect code mistakes.
 
 Go to `src` folder in the terminal and run this command
@@ -82,7 +88,7 @@ Go to `src` folder in the terminal and run this command
 
 This will generate `phpmd.html` file with the report.
 
-### PHPCS
+### PHPCS (Code Sniffer)
 Additionally, I have used PHPCS to validate my code against PSR12 coding standards.
 
 `phpcs --standard=PSR12 .\app\`
